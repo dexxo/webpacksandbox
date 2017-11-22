@@ -1,5 +1,5 @@
 {
-  "name": "zagapageapp",
+  "name": "webpacksandbox",
   "version": "1.0.0",
   "description": "test application",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --open",
     "api": "./node_modules/.bin/json-server --watch api/db.json"
   },
-  "author": "fernando.fajardo@zagalabs.com",
+  "author": "dexxo17@gmail.com",
   "license": "MIT",
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.17",
