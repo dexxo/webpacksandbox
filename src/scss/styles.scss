@@ -1,0 +1,19 @@
+@import 'fonts';
+
+body {
+  font-family: 'OpenSans-Regular';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  color: white;
+}
+
+.zaga {
+  background-image: url('../img/bg-zero.jpg');
+  background-size: cover;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
