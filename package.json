@@ -2,13 +2,14 @@
   "name": "webpacksandbox",
   "version": "1.0.0",
   "description": "test application",
-  "main": "index.js",
+  "main": "server.js",
   "engine": {
     "node": "8.9.1"
   },
   "scripts": {
     "watch": "webpack --progress --watch",
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "api": "./node_modules/.bin/json-server --watch api/db.json"
   },
   "author": "dexxo17@gmail.com",
@@ -24,7 +25,13 @@
     "node-sass": "^4.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
+    "uglifyjs-webpack-plugin": "^1.1.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dev-server": "^2.9.4",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "finalhandler": "^1.1.0",
+    "serve-static": "^1.13.1"
   }
 }
