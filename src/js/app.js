@@ -1,5 +1,12 @@
 import '../scss/styles.scss';
 
-(function(){
-  console.log('hello world app!!!');
-})();
+
+const hello = () => {
+  return new Promise((resolve, reject) => {
+    resolve({
+      greet: 'hello world app!!!'
+    });
+  });
+};
+
+hello().then(res => console.log(res.greet));

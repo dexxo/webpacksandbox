@@ -46,6 +46,18 @@ module.exports = {
         use: [
           'html-loader'
         ]
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        include: ['src'],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env'],
+            cacheDirectory: true
+          }
+        }
       }
     ]
   }
