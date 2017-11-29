@@ -49,6 +49,16 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        enforce: "pre", // preload the jshint loader
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: "jshint-loader"
+          }
+        ]
+      },
+      {
+        test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         include: ['src'],
         use: {
