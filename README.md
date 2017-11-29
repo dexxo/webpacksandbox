@@ -1,5 +1,8 @@
 Webpack Project Sandbox
 =======================
+This is a proyect that use webpack as a bundler, in order to provide
+a quick start in a new development, it has enviroment optimizations that gives
+a quality to any software, its simple and easy to configure.
 
 Installation commands.
 ----------------------
