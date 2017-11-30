@@ -9,7 +9,7 @@ const extractSass = new ExtractTextPlugin({
 
 module.exports = {
   entry: {
-    app: './src/js/app.js'
+    app: ['babel-polyfill', './src/js/app.js']
   },
   output: {
     filename: '[name].[chunkhash].js',
