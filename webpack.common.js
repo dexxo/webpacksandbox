@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
-    filename: '[name].[chunkhash].css'
+    filename: '[name].[hash].css'
 });
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
     app: ['babel-polyfill', './src/js/app.js']
   },
   output: {
-    filename: '[name].[chunkhash].js',
+    filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
