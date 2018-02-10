@@ -1,16 +1,16 @@
-const http = require('http');
-const finalhandler = require('finalhandler');
-const serveStatic = require('serve-static');
+'use strict';
+const express = require('express');
+const path = require('path');
+const app = express();
 
-// Serve up dist
-const serve = serveStatic('dist', {'index': ['index.html', 'index.htm']});
+app.use(express.static(path.join(__dirname, 'dist')));
 
-// Create server
-const server = http.createServer(function onRequest (req, res) {
-  serve(req, res, finalhandler(req, res));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-// Listen
-server.listen({port: 8080}, function(){
-  console.log('server listening on port 8080...');
+app.listen(8080, () => {
+  process.stdout.write('the server is available on http://localhost:8080/\n');
 });
+
+module.exports = app;

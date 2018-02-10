@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "max-len": [1, 120, 2, {
+        "ignoreComments": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true
+      }
+    ],
+    "no-console": ["error", { allow: ["log"] }],
+    "no-useless-escape": off,
+  },
+  "extends": ["eslint:recommended"],
+  "env": {
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "commonjs": true
+  },
+  "globals":{
+    "Promise": true
+  }
+}

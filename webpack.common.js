@@ -1,5 +1,4 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -16,7 +15,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
-    new CleanWebpackPlugin(['dist/*.*']),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
@@ -49,22 +47,22 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        enforce: "pre", // preload the jshint loader
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: [
           {
-            loader: "jshint-loader"
+            loader: "eslint-loader"
           }
         ]
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env'],
-            cacheDirectory: true
+            presets: [
+              ["env", {"targets": {"browsers": ["last 2 versions"]}}],
+            ]
           }
         }
       }
